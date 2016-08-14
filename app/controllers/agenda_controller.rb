@@ -1,16 +1,17 @@
 class AgendaController < ApplicationController
   def index
     user = User.find_by username: params[:username]
-    if user.valid?
-      post = user.join(:posts).all
+    if user
+      id = user.id
+      post = User.joins(:posts).select('user_id', "title", "description", "date").where("user_id = ?", id)
+      #post = user.joins(:posts)
       if post #S'il y a des post => id = user_id
         render json: post, status: 200
       else #Sinon on renvoi l'utilisateur => id = id
         render json: user, status: 200
       end
-      r
     else
-      render json: {error: user.errors.messages}
+      render json: {error: "Utilisateur introuvable."}
     end
   end
 

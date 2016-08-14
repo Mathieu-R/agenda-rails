@@ -1,10 +1,8 @@
 import Vue from 'vue'
-import name from 'components/name'
-import agendaForm from 'components/agenda-form'
-import agenda from 'components/agenda'
+import agenda from 'agenda'
 
 /* eslint-disable no-new */
 new Vue({
   el: 'body',
-  components: { name, agendaForm, agenda }
+  components: { agenda }
 })
