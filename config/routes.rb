@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get '/agenda/:name' => 'agenda#index'
+  post '/user/' => 'user#create'
+
+  get '/agenda/:username' => 'agenda#index'
   post '/agenda/' => 'agenda#create'
   put '/agenda/:id' => 'agenda#update'
   delete '/agenda/:id' => 'agenda#destroy'

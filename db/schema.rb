@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814072107) do
+ActiveRecord::Schema.define(version: 20160814162042) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "name"
     t.string   "title"
     t.text     "description", limit: 65535
     t.datetime "date"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "fk_rails_5b5ddfd518", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -25,4 +26,5 @@ ActiveRecord::Schema.define(version: 20160814072107) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "posts", "users"
 end
