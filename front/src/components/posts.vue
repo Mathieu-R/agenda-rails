@@ -1,6 +1,6 @@
 <template>
   <div>
-    <post :post="post" v-for="post in posts"></post> // Post Card
+    <post :post="post" v-for="post in posts"></post> <!-- Post Card -->
   </div>
 </template>
 

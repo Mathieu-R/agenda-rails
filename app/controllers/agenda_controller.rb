@@ -3,7 +3,7 @@ class AgendaController < ApplicationController
     user = User.find_by username: params[:username]
     if user
       id = user.id
-      post = User.joins(:posts).select('user_id', "title", "description", "date").where("user_id = ?", id)
+      post = User.joins(:posts).select('user_id', "title", "description", "date", "level").where("user_id = ?", id)
       #post = user.joins(:posts)
       if post #S'il y a des post => id = user_id
         render json: post, status: 200
@@ -16,7 +16,7 @@ class AgendaController < ApplicationController
   end
 
   def create
-    post = Post.create(user_id: params[:user_id], title: params[:title], description: params[:description], date: params[:date])
+    post = Post.create(user_id: params[:user_id], title: params[:title], description: params[:description], date: params[:date], level: params[:level])
     if !post.valid?
       render json: {error: post.errors.messages}
     else
@@ -29,6 +29,7 @@ class AgendaController < ApplicationController
     post.title = params[:title]
     post.description = params[:description]
     post.date = params[:date]
+    post.level = params[:level]
     post = post.save
     if post == false
       render json: {error: post.errors.messages}
