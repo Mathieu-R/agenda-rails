@@ -53,7 +53,7 @@
           importance: '',
           levels: {
             "1": "Peu important",
-            "2": "Assez important"
+            "2": "Normal"
             "3": "Important",
             "4": "Urgent"
           }
