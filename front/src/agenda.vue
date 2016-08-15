@@ -2,8 +2,8 @@
   <div class="ui container">
     <header-status></header-status>
     <name></name>
-    <post-form></post-form v-if=auth>
-    <posts></posts v-if=auth>
+    <post-form></post-form v-if="auth">
+    <posts></posts v-if="auth">
   </div>
 </template>
 

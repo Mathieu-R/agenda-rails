@@ -2,7 +2,7 @@
   <div class="ui inverted menu">
     <div class="header item">{{ getName ? getName : 'Agenda' }}</div>
     <div class="right menu">
-      <button class="ui inverted button">+</button>
+      <button class="ui black button">+</button>
     </div>
   </div>
 </template>

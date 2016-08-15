@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 const state = {
   name: false,
+  id: '',
   posts: []
 }
 
@@ -12,9 +13,14 @@ const mutations = {
   SET_NAME (name) {
     state.name = name
   },
+  SET_ID (id) {
+    state.id = id
+  },
   ADD_POSTS (state, posts) {
-    state.posts.push(...posts)
-    //posts.forEach(post => state.posts.push(post))
+    state.posts = posts
+  },
+  ADD_POST (state, post) {
+    state.posts.push(post)
   }
 }
 
