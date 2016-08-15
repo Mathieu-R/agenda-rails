@@ -16,6 +16,6 @@
 
   export default {
     components: { headerStatus, name, postForm, posts },
-    store
+    store,
   }
 </script>

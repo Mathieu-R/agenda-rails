@@ -1,10 +1,10 @@
 <template>
-  <form>
-    <div class=fields>
-      <input type=text v-model=username>
+    <div class="ui action left icon input">
+      <i class="search icon" v-if="loading"></i>
+      <input type=text placeholder="Nom d'utilisateur..." v-model="username">
+      <div class="ui teal button">Rechercher</div>
     </div>
-    <button @click=getPosts>Afficher</button>
-  </form>
+    <button @click="getPosts">Afficher</button>
 </template>
 
 <script type=text/babel>
@@ -23,17 +23,20 @@
     },
     data () {
       return {
+        loading: false
         username: ''
       }
     },
     methods: {
       getPosts () {
+        this.loading = true
         axios.get('/agenda/' + this.username)
           .then(reponse => {
             this.addPosts(response.data)
             this.setName(this.username) // On ajoute le nom que si celui-ci existe
           })
           .catch((e) => console.log(e))
+          .then(() => this.loading = false)
       }
     }
   }

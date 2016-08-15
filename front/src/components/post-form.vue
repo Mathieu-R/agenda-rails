@@ -1,28 +1,38 @@
 <template>
-  <main>
-    <form class="form" @submit.prevent=addPost>
-      <fieldset>
-        <input type="text" v-model="newRdv.titre" placeholder="Titre..." required=true>
-        <textarea  v-model="newRdv.desc" placeholder="Description..." rows="4" cols="100" required=true></textarea>
-        <article class="datetimes">
-          <p>
-            <label for="date">Date/Echéance: </label>
-            <datepicker v-model="newRdv.date" format="YYYY-MM-DD" ></datepicker>
-            <input v-model="newRdv.time" type="time" id="time">
-          </p>
-        </article>
-        <input type="submit" value="AJOUTER">
-      </fieldset>
+  <div>
+    <h3 class="ui header">Ajouter un rendez-vous</h3>
+    <form class="ui form" action="" @submit.prevent="addPost">
+      <div class="three field">
+        <div class="field">
+          <input type="text" v-model="titre" placeholder="Titre...">
+        </div>
+        <div class="field">
+          <label for="date">Date: </label>
+          <datepicker v-model="date" format="YYYY-MM-DD" ></datepicker>
+        </div>
+        <div class="field">
+          <input v-model="time" type="time" id="time">
+        </div>
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <textarea  v-model="desc" placeholder="Description..."></textarea>
+      </div>
+      <button type="submit" >
+        <i class="icon edit"></i>
+        Ajouter
+      </button>
     </form>
-  </main>
+  </div>
 </template>
 
 <script type=text/babel>
   import datepicker from 'vue-date-picker'
+  import { getName } from 'src/vuex/actions'
   export default {
     vuex: {
       getters: {
-
+        getName // Nom de l'utilisateur
       },
       actions: {
 
@@ -30,7 +40,10 @@
     },
     data () {
         return {
-
+          titre: '',
+          desc: '',
+          date: '',
+          time: '',
         }
     },
     computed: {
