@@ -22,7 +22,9 @@
       }
     },
     data () {
-      username: ''
+      return {
+        username: ''
+      }
     },
     methods: {
       getPosts () {

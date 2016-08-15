@@ -9,13 +9,14 @@
   export default {
     vuex: {
       getters: {
-        getName: getName
+        getName
       }
     },
     data () {
-      username: ''
+      return {
+        username: ''
+      }
     }
-
   }
 </script>
 

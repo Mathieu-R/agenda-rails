@@ -29,7 +29,9 @@
       }
     },
     data () {
+        return {
 
+        }
     },
     computed: {
       getDate: function () {
