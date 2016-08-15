@@ -9,8 +9,8 @@
 
 <script type=text/babel>
   import axios from 'axios'
-  import { addPosts } from "../vuex/action"
-  import { setName } from "../vuex/actions"
+  import { addPosts } from "src/vuex/actions"
+  import { setName } from "src/vuex/actions"
   export default {
     vuex: {
       getters: {
@@ -20,7 +20,7 @@
         addPosts: addPosts,
         setName: setName
       }
-    }
+    },
     data () {
       username: ''
     },

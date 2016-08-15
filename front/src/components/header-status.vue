@@ -5,13 +5,13 @@
 </template>
 
 <script type=text/babel>
-  import { getName } from '../vuex/action'
+  import { getName } from 'src/vuex/actions'
   export default {
     vuex: {
       getters: {
         getName: getName
       }
-    }
+    },
     data () {
       username: ''
     }

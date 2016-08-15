@@ -1,6 +1,6 @@
 <template>
   <main>
-    <form class="form" @submit.prevent=addRdv>
+    <form class="form" @submit.prevent=addPost>
       <fieldset>
         <input type="text" v-model="newRdv.titre" placeholder="Titre..." required=true>
         <textarea  v-model="newRdv.desc" placeholder="Description..." rows="4" cols="100" required=true></textarea>
@@ -18,7 +18,25 @@
 </template>
 
 <script type=text/babel>
+  import datepicker from 'vue-date-picker'
+  export default {
+    vuex: {
+      getters: {
 
+      },
+      actions: {
+
+      }
+    },
+    data () {
+
+    },
+    computed: {
+      getDate: function () {
+        return document.getElementsByClassName('datetime-picker')[0].getElementsByTagName('input')[0].value // Récupérer la date du datepicker
+      }
+    }
+  }
 </script>
 
 <style>

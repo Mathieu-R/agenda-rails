@@ -12,8 +12,11 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "axios": "^0.13.1",
+    "babel-runtime": "^6.0.0",
     "vue": "^1.0.21",
-    "babel-runtime": "^6.0.0"
+    "vue-date-picker": "^1.0.2",
+    "vuex": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
