@@ -19,7 +19,7 @@
   export default {
     props: {
       post: Object
-    }
+    },
     vuex: {
       getters: {
 
@@ -30,10 +30,10 @@
       data () {
         return {
           levels: {
-            1: "Pas important",
-            2: "Normal",
-            3: "Très important",
-            4: "Urgent"
+            "1": "Pas important",
+            "2": "Normal",
+            "3": "Très important",
+            "4": "Urgent"
           }
         }
       }

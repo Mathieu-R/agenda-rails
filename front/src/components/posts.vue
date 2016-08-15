@@ -6,16 +6,16 @@
 
 <script type=text/babel>
   import post from './post'
-  import { posts } from './vuex/actions'
+  import { posts } from '../vuex/actions'
   export default {
     vuex: {
       getters: {
-
+        posts
       },
       actions: {
 
       },
-      components: { post }
+      components: { post },
       data () {
         return {
 

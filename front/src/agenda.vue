@@ -1,9 +1,9 @@
 <template>
   <div class="ui container">
-    <header-status></header>
+    <header-status></header-status>
     <name></name>
-    <post-form></post-form>
-    <posts></posts>
+    <post-form></post-form v-if=auth>
+    <posts></posts v-if=auth>
   </div>
 </template>
 
@@ -17,5 +17,10 @@
   export default {
     components: { headerStatus, name, postForm, posts },
     store,
+    data () {
+      return {
+        auth: false
+      }
+    }
   }
 </script>

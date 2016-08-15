@@ -1,22 +1,24 @@
 <template>
   <div>
-    <h3 class="ui header">Ajouter un rendez-vous</h3>
-    <form class="ui form" action="" @submit.prevent="addPost">
+    <h3 class="ui dividing header">Ajouter un rendez-vous</h3>
+    <form class="ui form" action="" @submit.prevent="addPost()">
       <div class="four field">
         <div class="field">
+          <label>Titre</label>
           <input type="text" v-model="titre" placeholder="Titre...">
         </div>
         <div class="field">
-          <label for="date">Date: </label>
-          <datepicker v-model="date" format="YYYY-MM-DD" ></datepicker>
+          <label for="date">Date</label>
+          <datepicker format="YYYY-MM-DD" ></datepicker>
         </div>
         <div class="field">
+          <label>Heure</label>
           <input v-model="time" type="time" id="time">
         </div>
         <div class="field">
-          <select class="ui dropdown">
-            <option value="">Gender</option>
-            <option v-model="importance" value="key" v-for="(key, level) in levels">level</option>
+          <label>Importance</label>
+          <select v-model="importance" class="ui dropdown">
+            <option value="key" v-for="(key, level) in levels">{{level}}</option>
           </select>
         </div>
       </div>
@@ -24,7 +26,7 @@
         <label>Description</label>
         <textarea v-model="desc" placeholder="Description..."></textarea>
       </div>
-      <button type="submit" >
+      <button type="submit" class="ui big blue labeled icon button">
         <i class="icon edit"></i>
         Ajouter
       </button>
@@ -44,16 +46,16 @@
 
       }
     },
+    components: { datepicker },
     data () {
         return {
           titre: '',
           desc: '',
-          date: '',
           time: '',
           importance: '',
           levels: {
             "1": "Peu important",
-            "2": "Normal"
+            "2": "Normal",
             "3": "Important",
             "4": "Urgent"
           }

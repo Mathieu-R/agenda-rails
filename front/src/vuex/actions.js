@@ -1,4 +1,4 @@
-export const getName = function ({dispatch, state}) {
+export const getName = function (state) {
   return state.name
 }
 
@@ -6,7 +6,7 @@ export const setName = function ({dispatch, state}, name) {
   dispatch('SET_NAME', name)
 }
 
-export const posts = function ({dispatch, state}) {
+export const posts = function (state) {
   return state.posts
 }
 

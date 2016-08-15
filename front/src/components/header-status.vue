@@ -1,6 +1,6 @@
 <template>
   <div class="ui inverted menu">
-    <div class="header item">Agenda</div>
+    <div class="header item">{{ getName ? getName : 'Agenda' }}</div>
     <div class="right menu">
       <button class="ui inverted button">+</button>
     </div>
