@@ -15,6 +15,7 @@
   import { setId } from "src/vuex/actions"
 
   export default {
+    props: [auth],
     vuex: {
       getters: {
 
@@ -43,7 +44,7 @@
           })
           .catch((e) => {
             console.log(e)
-            this.$parent.auth = true
+            this.auth = true
           })
           .then(() => {
             this.username = ''

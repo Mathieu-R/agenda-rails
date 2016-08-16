@@ -1,7 +1,7 @@
 <template>
   <div class="ui container">
     <header-status></header-status>
-    <name></name>
+    <name auth.sync=auth></name>
     <post-form></post-form v-if="auth">
     <posts></posts v-if="auth">
   </div>
