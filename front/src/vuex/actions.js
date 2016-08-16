@@ -25,3 +25,7 @@ export const addPosts = function ({dispatch, state}, posts) {
 export const addPost = function ({dispatch, state}, post) {
   dispatch('ADD_POST', post)
 }
+
+export const removePost = function ({dispatch, state}, post) {
+  dispatch('REMOVE_POST', post)
+}

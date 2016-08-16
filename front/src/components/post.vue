@@ -1,6 +1,11 @@
 <template>
   <div class="ui card">
+    <div class="ui inverted active dimmer" v-show=removing>
+      <div class="ui text loader">Suppression...</div>
+    </div>
     <div class="content">
+      <i class="right floated remove icon removeCard" @click="removeCard"></i>
+      <i class="right floated write icon editCard" @click="editCard"></i>
       <div class="header">{{ post.title }}</div>
       <div class="meta">
         <span class="category">{{ getDayName }} {{ getDayNumber }} {{ getMonthName }} {{ getYear }}</span>
@@ -17,6 +22,8 @@
 </template>
 
 <script type=text/babel>
+  import axios from 'axios'
+  import { removePost } from '../vuex/actions'
   export default {
     props: {
       post: Object
@@ -26,13 +33,14 @@
 
       },
       actions: {
-
+        removePost
       },
     },
     data () {
       return {
+        removing: false,
         levels: {
-          "1": "Pas important",
+          "1": "Peu important",
           "2": "Normal",
           "3": "Très important",
           "4": "Urgent"
@@ -62,13 +70,50 @@
         min < 10 ? min = "0" + min : ''
         return min
       }
+    },
+    methods: {
+      editCard () {
+        axios.patch("/agenda/" + post.id)
+          .then((response) => {
+            console.log(response.data.success)
+          })
+          .catch((e) => {
+            console.log(e.data.errors)
+          })
+      },
+      removeCard () {
+        this.removing = true
+        axios.delete("/agenda/" + this.post.id)
+          .then((response) => {
+            console.log(response.data.success)
+            this.removePost(response.data.post)
+          })
+          .catch((e) => {
+            console.log(e)
+        })
+          .then(() => this.removing = false)
+      }
     }
   }
 </script>
 
 <style>
+  .editCard, .removeCard {
+    cursor: pointer;
+  }
+
+  .editCard:hover {
+    color: midnightblue;
+    transition: color .2s linear;
+  }
+
+  .removeCard:hover {
+    color: red;
+    transition: color .2s linear;
+  }
+
   .level1 {
-    color: #1E824C;
+    color: limegreen;
   }
 
   .level2 {

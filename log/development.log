@@ -2952,3 +2952,258 @@ Processing by AgendaController#index as HTML
 Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 15:49:51 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 16:06:53 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"Brol", "date"=>"2016-10-25 10:15", "level"=>"1", "description"=>"Trololo", "agenda"=>{"user_id"=>1, "title"=>"Brol", "date"=>"2016-10-25 10:15", "level"=>"1", "description"=>"Trololo"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`title`, `description`, `date`, `user_id`, `level`) VALUES ('Brol', 'Trololo', '2016-10-25 10:15:00', 1, 1)[0m
+  [1m[35m (75.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 85ms (Views: 0.2ms | ActiveRecord: 76.0ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 16:16:34 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 16:23:29 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 16:24:10 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/agenda/null" for 127.0.0.1 at 2016-08-16 16:24:11 +0200
+Processing by AgendaController#destroy as HTML
+  Parameters: {"id"=>"null"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=null):
+  
+app/controllers/agenda_controller.rb:43:in `destroy'
+Started GET "/agenda?name=Mathieu" for 127.0.0.1 at 2016-08-16 16:24:27 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/agenda"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/agenda/mathieu" for 127.0.0.1 at 2016-08-16 16:24:36 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/agenda/mathieu" for 127.0.0.1 at 2016-08-16 16:25:12 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.`id`, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/agenda/mathieu" for 127.0.0.1 at 2016-08-16 16:26:07 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT post.id, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'post.id' in 'field list': SELECT post.id, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)):
+  
+app/controllers/agenda_controller.rb:9:in `index'
+Started GET "/agenda/mathieu" for 127.0.0.1 at 2016-08-16 16:26:31 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"mathieu"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "post"."id", user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '."id", user_id, title, description, date, level FROM `users` INNER JOIN `posts` ' at line 1: SELECT "post"."id", user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)):
+  
+app/controllers/agenda_controller.rb:9:in `index'
+Started GET "/agenda/mathieu" for 127.0.0.1 at 2016-08-16 16:26:32 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "post"."id", user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '."id", user_id, title, description, date, level FROM `users` INNER JOIN `posts` ' at line 1: SELECT "post"."id", user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)):
+  
+app/controllers/agenda_controller.rb:9:in `index'
+Started GET "/agenda/mathieu" for 127.0.0.1 at 2016-08-16 16:27:04 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `posts`.`id`, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 16:27:22 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `posts`.`id`, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/agenda/3" for 127.0.0.1 at 2016-08-16 16:27:23 +0200
+Processing by AgendaController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM `posts` WHERE `posts`.`id` = 3[0m
+  [1m[35m (99.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 105ms (Views: 0.1ms | ActiveRecord: 100.8ms)
+
+
+Started GET "/agenda/Matthieu" for 127.0.0.1 at 2016-08-16 16:27:35 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Matthieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Matthieu' LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 16:27:38 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `posts`.`id`, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 16:27:59 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"Brol", "date"=>"2016-08-10 01:00", "level"=>"1", "description"=>"Brol", "agenda"=>{"user_id"=>1, "title"=>"Brol", "date"=>"2016-08-10 01:00", "level"=>"1", "description"=>"Brol"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `posts` (`title`, `description`, `date`, `user_id`, `level`) VALUES ('Brol', 'Brol', '2016-08-10 01:00:00', 1, 1)[0m
+  [1m[35m (89.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 93ms (Views: 0.2ms | ActiveRecord: 90.1ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 16:34:46 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `posts`.`id`, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/agenda/4" for 127.0.0.1 at 2016-08-16 16:34:48 +0200
+Processing by AgendaController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `posts` WHERE `posts`.`id` = 4[0m
+  [1m[35m (98.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 105ms (Views: 0.3ms | ActiveRecord: 99.9ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 16:35:37 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `posts`.`id`, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 16:35:54 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"Brol", "date"=>"2016-08-17 10:00", "level"=>"1", "description"=>"Brol", "agenda"=>{"user_id"=>1, "title"=>"Brol", "date"=>"2016-08-17 10:00", "level"=>"1", "description"=>"Brol"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`title`, `description`, `date`, `user_id`, `level`) VALUES ('Brol', 'Brol', '2016-08-17 10:00:00', 1, 1)[0m
+  [1m[35m (41.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 46ms (Views: 0.3ms | ActiveRecord: 42.2ms)
+
+
+Started DELETE "/agenda/5" for 127.0.0.1 at 2016-08-16 16:35:56 +0200
+Processing by AgendaController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 5 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `posts` WHERE `posts`.`id` = 5[0m
+  [1m[35m (67.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 70ms (Views: 0.4ms | ActiveRecord: 68.3ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 16:38:08 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `posts`.`id`, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 16:38:25 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"Brol", "date"=>"2016-08-17 10:00", "level"=>"1", "description"=>"Brol", "agenda"=>{"user_id"=>1, "title"=>"Brol", "date"=>"2016-08-17 10:00", "level"=>"1", "description"=>"Brol"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`title`, `description`, `date`, `user_id`, `level`) VALUES ('Brol', 'Brol', '2016-08-17 10:00:00', 1, 1)[0m
+  [1m[35m (43.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 44.2ms)
+
+
+Started DELETE "/agenda/6" for 127.0.0.1 at 2016-08-16 16:38:32 +0200
+Processing by AgendaController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `posts` WHERE `posts`.`id` = 6[0m
+  [1m[35m (109.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 111ms (Views: 0.3ms | ActiveRecord: 109.8ms)
+
+

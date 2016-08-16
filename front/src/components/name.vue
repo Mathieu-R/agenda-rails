@@ -15,7 +15,6 @@
   import { setId } from "src/vuex/actions"
 
   export default {
-    props: [auth],
     vuex: {
       getters: {
 

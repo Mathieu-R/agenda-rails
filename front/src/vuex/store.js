@@ -21,6 +21,10 @@ const mutations = {
   },
   ADD_POST (state, post) {
     state.posts.push(post)
+  },
+  REMOVE_POST (state, post) {
+    let index = state.posts.findIndex(p => p.id == post.id)
+    state.posts.splice(index, 1)
   }
 }
 

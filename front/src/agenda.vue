@@ -1,9 +1,9 @@
 <template>
   <div class="ui container">
     <header-status></header-status>
-    <name auth.sync=auth></name>
-    <post-form></post-form v-if="auth">
-    <posts></posts v-if="auth">
+    <name></name>
+    <post-form></post-form>
+    <posts></posts>
   </div>
 </template>
 
@@ -17,10 +17,5 @@
   export default {
     components: { headerStatus, name, postForm, posts },
     store,
-    data () {
-      return {
-        auth: false
-      }
-    }
   }
 </script>
