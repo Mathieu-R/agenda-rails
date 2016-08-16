@@ -10,10 +10,10 @@ const state = {
 }
 
 const mutations = {
-  SET_NAME (name) {
+  SET_NAME (state, name) {
     state.name = name
   },
-  SET_ID (id) {
+  SET_ID (state, id) {
     state.id = id
   },
   ADD_POSTS (state, posts) {

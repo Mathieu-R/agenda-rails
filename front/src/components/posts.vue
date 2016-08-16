@@ -29,11 +29,11 @@
 
 <style>
   .showPosts-transition {
-    opacity: 1;
-    transition: opacity .3s linear;
+    opacity: 1!important;
+    transition: opacity .3s linear!important;
   }
 
   .showPosts-enter, .showPosts-leave {
-    opacity: 0;
+    opacity: 0!important;
   }
 </style>

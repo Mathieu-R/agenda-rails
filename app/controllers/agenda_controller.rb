@@ -8,6 +8,7 @@ class AgendaController < ApplicationController
       if post #S'il y a des post => on renvoi les posts et l'id
         render json: {posts: post, id: id}, status: 200
       else #Sinon on renvoi l'id
+
         render json: {id: id}, status: 200
       end
     else
@@ -20,7 +21,7 @@ class AgendaController < ApplicationController
     if !post.valid?
       render json: {error: post.errors.messages}
     else
-      render json: {id: post.id, success: "Rendez-vous ajouté avec succès"} #IMPORTANT => Renvoi l'ID du post
+      render json: {post: post, success: "Rendez-vous ajouté avec succès"} #IMPORTANT => Renvoi l'ID du post
     end
   end
 

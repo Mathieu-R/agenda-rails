@@ -2793,3 +2793,162 @@ Processing by AgendaController#index as HTML
 Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 11:25:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+Completed 200 OK in 43ms (Views: 0.2ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 11:28:46 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 11:29:27 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 12:08:35 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 12:14:54 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 12:15:32 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 12:16:17 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 12:16:55 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/user/" for 127.0.0.1 at 2016-08-16 12:47:56 +0200
+Processing by UserController#create as HTML
+  Parameters: {"username"=>"mathieu", "user"=>{"username"=>"mathieu"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'mathieu' LIMIT 1[0m
+  [1m[35mSQL (21.6ms)[0m  [1m[32mINSERT INTO `users` (`username`, `created_at`, `updated_at`) VALUES ('mathieu', '2016-08-16 10:47:56', '2016-08-16 10:47:56')[0m
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 91ms (Views: 0.1ms | ActiveRecord: 53.1ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 12:48:18 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (28.0ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 79ms (Views: 50.1ms | ActiveRecord: 28.2ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 13:03:39 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 9ms (Views: 2.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 13:06:57 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"Cours de piano", "date"=>"2016-08-17 16:00", "level"=>"2", "description"=>"Cours de piano avec Xavier Edouard Horremans", "agenda"=>{"user_id"=>1, "title"=>"Cours de piano", "date"=>"2016-08-17 16:00", "level"=>"2", "description"=>"Cours de piano avec Xavier Edouard Horremans"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`title`, `description`, `date`, `user_id`, `level`) VALUES ('Cours de piano', 'Cours de piano avec Xavier Edouard Horremans', '2016-08-17 16:00:00', 1, 2)[0m
+  [1m[35m (79.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 119ms (Views: 0.2ms | ActiveRecord: 80.2ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 13:08:43 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 14:07:19 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 14:07:40 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 14:14:15 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 14:17:19 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 14:36:02 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 14:36:38 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"Soirée chez Auriane", "date"=>"2016-08-18 18:30", "level"=>"2", "description"=>"Soirée chez Auriane => OKLM", "agenda"=>{"user_id"=>1, "title"=>"Soirée chez Auriane", "date"=>"2016-08-18 18:30", "level"=>"2", "description"=>"Soirée chez Auriane => OKLM"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`title`, `description`, `date`, `user_id`, `level`) VALUES ('Soirée chez Auriane', 'Soirée chez Auriane => OKLM', '2016-08-18 18:30:00', 1, 2)[0m
+  [1m[35m (77.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 81ms (Views: 0.2ms | ActiveRecord: 78.4ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 14:37:55 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+

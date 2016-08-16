@@ -18,7 +18,7 @@
         <div class="field">
           <label>Importance</label>
           <select v-model="importance" class="ui dropdown">
-            <option value="key" v-for="(key, level) in levels">{{level}}</option>
+            <option :value="key" v-for="(key, level) in levels">{{level}}</option>
           </select>
         </div>
       </div>
@@ -36,9 +36,10 @@
 
 <script type=text/babel>
   import datepicker from 'vue-date-picker'
+  import axios from 'axios'
   import { getName } from 'src/vuex/actions'
   import { id } from 'src/vuex/actions'
-  import { addPost } from 'src/vuex/actions'
+  import { addPost as addPostAction } from 'src/vuex/actions'
   export default {
     vuex: {
       getters: {
@@ -46,7 +47,7 @@
         id // ID de l'utilisateur
       },
       actions: {
-        addPost
+        addPostAction
       }
     },
     components: { datepicker },
@@ -76,11 +77,10 @@
         let datetime = this.getDate + " " + this.time
         let level = this.importance
         let desc = this.desc
+        console.log({user_id: id, title: title, date: datetime, level: level, description: desc})
         axios.post('/agenda/', {user_id: id, title: title, date: datetime, level: level, description: desc})
           .then(response => {
-            console.log(response.data.id)
-            let post = {id: response.data.id, title: title, date: datetime, level: level, description: desc}
-            this.addPost(post)
+            this.addPostAction(response.data.post)
           })
           .catch(e => {
             console.log(e)
@@ -91,8 +91,6 @@
             this.time = ''
             this.importance = ''
           })
-        console.log(datetime)
-        //console.log(this.getDate, this.time, typeof this.getDate, typeof this.time)
       }
     }
   }

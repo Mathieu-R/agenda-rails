@@ -36,7 +36,6 @@
         this.loading = true
         axios.get('/agenda/' + this.username)
           .then(response => {
-            console.log(response.data)
             this.addPosts(response.data.posts) // On ajoute les posts
             this.setId(response.data.id) // On ajoute l'id
             this.setName(this.username) // On ajoute le nom au header que si celui-ci existe

@@ -3,7 +3,8 @@
     <div class="content">
       <div class="header">{{ post.title }}</div>
       <div class="meta">
-        <span class="category">{{ post.date }}</span>
+        <span class="category">{{ getDayName }} {{ getDayNumber }} {{ getMonthName }} {{ getYear }}</span>
+        <span class="category">{{ getHours }}:{{ getMinutes }} </span>
       </div>
       <div class="description">
         <p>{{ post.description }}</p>
@@ -36,6 +37,30 @@
           "3": "Très important",
           "4": "Urgent"
         }
+      }
+    },
+    computed: {
+      getDayName() {
+        const days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+        return days[new Date(this.post.date).getDay() - 1]
+      },
+      getDayNumber() {
+        return new Date(this.post.date).getDate()
+      },
+      getMonthName() {
+        const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+        return months[new Date(this.post.date).getMonth()]
+      },
+      getYear() {
+        return new Date(this.post.date).getFullYear()
+      },
+      getHours() {
+        return new Date(this.post.date).getUTCHours()
+      },
+      getMinutes() {
+        let min = new Date(this.post.date).getMinutes()
+        min < 10 ? min = "0" + min : ''
+        return min
       }
     }
   }
