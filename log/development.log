@@ -3207,3 +3207,129 @@ Processing by AgendaController#destroy as HTML
 Completed 200 OK in 111ms (Views: 0.3ms | ActiveRecord: 109.8ms)
 
 
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 21:40:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `posts`.`id`, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 33ms (Views: 15.0ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 21:51:23 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>"", "title"=>"Cours", "date"=>" ", "level"=>"", "description"=>"", "agenda"=>{"user_id"=>"", "title"=>"Cours", "date"=>" ", "level"=>"", "description"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 77ms (Views: 1.1ms | ActiveRecord: 29.7ms)
+
+
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 21:59:46 +0200
+  
+SyntaxError (/home/mathieu/Lab/agenda-rails/app/controllers/agenda_controller.rb:14: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+      render json: {error: "Utilisateur introuvable."}, status 422
+                                                                  ^
+/home/mathieu/Lab/agenda-rails/app/controllers/agenda_controller.rb:21: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+      render json: {error: post.errors.messages}, status 422
+                                                            ^
+/home/mathieu/Lab/agenda-rails/app/controllers/agenda_controller.rb:35: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+      render json: {error: post.errors.messages}, status 422
+                                                            ^
+/home/mathieu/Lab/agenda-rails/app/controllers/agenda_controller.rb:47: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+...u être supprimé"}, status 422
+...                               ^):
+  
+app/controllers/agenda_controller.rb:14: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+app/controllers/agenda_controller.rb:21: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+app/controllers/agenda_controller.rb:35: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+app/controllers/agenda_controller.rb:47: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 22:05:03 +0200
+  
+SyntaxError (/home/mathieu/Lab/agenda-rails/app/controllers/agenda_controller.rb:14: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+      render json: {error: "Utilisateur introuvable."}, status 422
+                                                                  ^
+/home/mathieu/Lab/agenda-rails/app/controllers/agenda_controller.rb:21: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+      render json: {error: post.errors.messages}, status 422
+                                                            ^
+/home/mathieu/Lab/agenda-rails/app/controllers/agenda_controller.rb:35: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+      render json: {error: post.errors.messages}, status 422
+                                                            ^
+/home/mathieu/Lab/agenda-rails/app/controllers/agenda_controller.rb:47: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+...u être supprimé"}, status 422
+...                               ^):
+  
+app/controllers/agenda_controller.rb:14: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+app/controllers/agenda_controller.rb:21: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+app/controllers/agenda_controller.rb:35: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+app/controllers/agenda_controller.rb:47: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+Started GET "/agenda/Mathieu" for 127.0.0.1 at 2016-08-16 22:05:49 +0200
+Processing by AgendaController#index as HTML
+  Parameters: {"username"=>"Mathieu"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'Mathieu' LIMIT 1[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT `posts`.`id`, user_id, title, description, date, level FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE (user_id = 1)[0m
+Completed 200 OK in 32ms (Views: 10.9ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 22:05:56 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>"", "agenda"=>{"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 27ms (Views: 0.3ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 22:09:06 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>"", "agenda"=>{"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 12ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 22:10:34 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>"", "agenda"=>{"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 400 Bad Request in 33ms (Views: 0.4ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 22:10:50 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>"", "agenda"=>{"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 400 Bad Request in 38ms (Views: 0.5ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 22:14:56 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>"", "agenda"=>{"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 400 Bad Request in 10ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 22:15:43 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>"", "agenda"=>{"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 400 Bad Request in 13ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/agenda/" for 127.0.0.1 at 2016-08-16 22:15:45 +0200
+Processing by AgendaController#create as HTML
+  Parameters: {"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>"", "agenda"=>{"user_id"=>1, "title"=>"", "date"=>" ", "level"=>"", "description"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 400 Bad Request in 8ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+

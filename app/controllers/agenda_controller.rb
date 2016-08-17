@@ -8,18 +8,17 @@ class AgendaController < ApplicationController
       if post #S'il y a des post => on renvoi les posts et l'id
         render json: {posts: post, id: id}, status: 200
       else #Sinon on renvoi l'id
-
         render json: {id: id}, status: 200
       end
     else
-      render json: {error: "Utilisateur introuvable."}
+      render json: {error: "Utilisateur introuvable."}, status: 422
     end
   end
 
   def create
     post = Post.create(user_id: params[:user_id], title: params[:title], description: params[:description], date: params[:date], level: params[:level])
     if !post.valid?
-      render json: {error: post.errors.messages}
+      render json: {error: post.errors}, status: 400
     else
       render json: {post: post, success: "Rendez-vous ajouté avec succès"} #IMPORTANT => Renvoi l'ID du post
     end
@@ -33,7 +32,7 @@ class AgendaController < ApplicationController
     post.level = params[:level]
     post = post.save
     if post == false
-      render json: {error: post.errors.messages}
+      render json: {error: post.errors.messages}, status: 422
     else
       render json: {post: post, success: "Rendez-vous modifié avec succès !"}
     end
@@ -45,7 +44,7 @@ class AgendaController < ApplicationController
     if post
       render json: {post: post, success: "Rendez-vous supprimé avec succès !"}
     else #Sinon
-      render json: {error: "Ce rendez-vous n'a pas pu être supprimé"}
+      render json: {error: "Ce rendez-vous n'a pas pu être supprimé"}, status: 422
     end
   end
 end

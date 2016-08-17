@@ -82,7 +82,7 @@
           .then(response => {
             this.addPostAction(response.data.post)
           })
-          .catch(e => {
+          .catch((e) => {
             console.log(e)
           })
           .then(() => {
