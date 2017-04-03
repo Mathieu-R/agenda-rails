@@ -1,2 +1,2 @@
 # Agenda-Rails
-Agenda en ligne. Powered with Rails and VueJs
+Online agenda. Powered with Rails and VueJs
